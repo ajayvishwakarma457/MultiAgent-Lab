@@ -14,7 +14,14 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "analyze": "npm run build 2>&1 | grep -E 'dist.*kB'",
+    "audit:foundation": "node .claude/skills/enterprise-foundation-audit.js",
+    "audit:gatekeeper": "node .claude/skills/pre-commit-gatekeeper.js",
+    "audit:tests": "node .claude/skills/test-intelligence.js",
+    "audit:performance": "node .claude/skills/performance-intelligence.js",
+    "audit:all": "npm run audit:foundation && npm run audit:tests && npm run audit:performance",
+    "generate:component": "node .claude/skills/intelligent-component-builder.js"
   },
   "dependencies": {
     "react": "^18.2.0",

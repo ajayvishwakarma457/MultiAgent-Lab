@@ -35,4 +35,21 @@ Summarize:
 11. Customize keyboards shortcuts 
 
 
-pip install code-review-graph code-review-graph code-review-graph build
+
+foundation-validator
+component-scaffold
+enterprise-check
+feature-workflow
+git-helper
+coverage-report
+performance-audit
+
+
+enterprise-foundation-audit
+intelligent-component-builder
+pre-commit-gatekeeper
+performance-intelligence
+accessibility-auditor
+test-intelligence
+architecture-guardian
+deployment-orchestrator
