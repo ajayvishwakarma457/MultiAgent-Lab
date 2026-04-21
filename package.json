@@ -1,0 +1,14 @@
+{
+  "name": "multi-agent-system",
+  "version": "1.0.0",
+  "description": "A multi-agent system in Node.js",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": ["agents", "multi-agent", "task-queue"],
+  "author": "Ajay Spak",
+  "license": "MIT"
+}
