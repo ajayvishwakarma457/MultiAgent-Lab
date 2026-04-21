@@ -1,0 +1,31 @@
+{
+  "model": "haiku",
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "defaultMode": "auto",
+  "mcpServers": {
+    "web-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-web-search"]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    }
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(npm run *)",
+      "Bash(git rm *)",
+      "Bash(git push *)",
+      "Bash(timeout 5 npx -y @modelcontextprotocol/server-web-search)",
+      "Bash(timeout 5 npx -y @modelcontextprotocol/server-fetch)",
+      "Bash(npm search *)"
+    ]
+  }
+}
