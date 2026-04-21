@@ -1,0 +1,127 @@
+.statistics-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.app.light-mode .statistics-panel {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.app.dark-mode .statistics-panel {
+  background: linear-gradient(135deg, #3a3a52 0%, #2d2d44 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.app.light-mode .stat-item {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.app.dark-mode .stat-item {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.app.light-mode .stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.15);
+}
+
+.app.dark-mode .stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.25);
+}
+
+.stat-label {
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.app.light-mode .stat-label {
+  color: #666;
+}
+
+.app.dark-mode .stat-label {
+  color: #aaa;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.app.light-mode .stat-value {
+  color: #667eea;
+}
+
+.app.dark-mode .stat-value {
+  color: #a8b5ff;
+}
+
+.progress-container {
+  width: 100%;
+  position: relative;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.app.light-mode .progress-bar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.6;
+}
+
+.app.dark-mode .progress-bar {
+  background: linear-gradient(90deg, #667eea 0%, #a8b5ff 100%);
+  opacity: 0.5;
+}
+
+.progress-container .stat-value {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .statistics-panel {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .stat-value {
+    font-size: 1.5em;
+  }
+
+  .progress-container {
+    min-height: 28px;
+  }
+}

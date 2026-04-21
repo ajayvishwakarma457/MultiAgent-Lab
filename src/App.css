@@ -237,7 +237,7 @@ h1 {
   font-size: 1em;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .app.light-mode .add-button {
@@ -246,7 +246,8 @@ h1 {
 
 .app.light-mode .add-button:hover {
   background: #5568d3;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
 }
 
 .app.dark-mode .add-button {
@@ -255,11 +256,67 @@ h1 {
 
 .app.dark-mode .add-button:hover {
   background: #6b8ef5;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
 }
 
 .add-button:active {
-  transform: translateY(0);
+  transform: translateY(-1px);
+}
+
+.search-section {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.search-field {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  border: 2px solid;
+}
+
+.app.light-mode .search-field {
+  border-color: #e0e0e0;
+  background-color: white;
+  color: #333;
+}
+
+.app.light-mode .search-field:hover {
+  border-color: #d0d0d0;
+  background-color: #fafafa;
+}
+
+.app.light-mode .search-field:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background-color: white;
+}
+
+.app.dark-mode .search-field {
+  border-color: #444;
+  background-color: #3a3a52;
+  color: #e0e0e0;
+}
+
+.app.dark-mode .search-field::placeholder {
+  color: #999;
+}
+
+.app.dark-mode .search-field:hover {
+  border-color: #555;
+  background-color: #424260;
+}
+
+.app.dark-mode .search-field:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+  background-color: #424260;
 }
 
 .stats {
@@ -294,7 +351,7 @@ h1 {
   font-size: 0.85em;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .app.light-mode .clear-button {
@@ -303,7 +360,8 @@ h1 {
 
 .app.light-mode .clear-button:hover {
   background: #f57c00;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
 }
 
 .app.dark-mode .clear-button {
@@ -312,7 +370,8 @@ h1 {
 
 .app.dark-mode .clear-button:hover {
   background: #ffaa00;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
 }
 
 .clear-button:active {
@@ -359,7 +418,7 @@ h1 {
   font-size: 0.9em;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .app.light-mode .filter-btn {
@@ -370,7 +429,8 @@ h1 {
 .app.light-mode .filter-btn:hover {
   background: #e8e8e8;
   color: #333;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .app.dark-mode .filter-btn {
@@ -381,7 +441,8 @@ h1 {
 .app.dark-mode .filter-btn:hover {
   background: #424260;
   color: #ddd;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .filter-btn.active {
@@ -393,8 +454,8 @@ h1 {
 
 .filter-btn.active:hover {
   background: #5568d3;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
 }
 
 .category-filter-btn {
@@ -407,6 +468,9 @@ h1 {
 .todos-list {
   list-style: none;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .empty-message {

@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import TodoItem from './components/TodoItem'
+import Statistics from './components/Statistics'
 import './App.css'
 
 const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 }
@@ -23,6 +24,7 @@ export default function App() {
   const [priority, setPriority] = useState(DEFAULT_PRIORITY)
   const [category, setCategory] = useState(DEFAULT_CATEGORY)
   const [categoryFilter, setCategoryFilter] = useState('all')
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     const saved = localStorage.getItem('todos')
@@ -98,8 +100,12 @@ export default function App() {
         if (categoryFilter === 'all') return true
         return todo.category === categoryFilter
       })
+      .filter(todo => {
+        if (!searchTerm.trim()) return true
+        return todo.text.toLowerCase().includes(searchTerm.toLowerCase())
+      })
       .sort((a, b) => PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority])
-  }, [todos, filter, categoryFilter])
+  }, [todos, filter, categoryFilter, searchTerm])
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -159,8 +165,20 @@ export default function App() {
         <button onClick={addTodo} className="add-button" aria-label="Add new todo">Add</button>
       </div>
 
+      <Statistics totalCount={totalCount} completedCount={completedCount} />
+
+      <div className="search-section">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="🔍 Search todos..."
+          className="search-field"
+          aria-label="Search todos"
+        />
+      </div>
+
       <div className="stats" aria-live="polite" aria-atomic="true">
-        <p>{completedCount} / {totalCount} completed</p>
         {completedCount > 0 && (
           <button onClick={clearCompleted} className="clear-button" aria-label={`Clear ${completedCount} completed todo${completedCount !== 1 ? 's' : ''}`}>
             Clear Completed
