@@ -5,9 +5,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   min-height: 100vh;
   padding: 20px;
 }
@@ -27,7 +27,9 @@ body {
   margin: 0 auto;
   border-radius: 12px;
   padding: 40px;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .app.light-mode .container {
@@ -71,7 +73,9 @@ h1 {
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
 .app.light-mode .dark-mode-toggle {
@@ -98,7 +102,10 @@ h1 {
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 1em;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s,
+    color 0.3s;
   border: 2px solid;
 }
 
@@ -148,7 +155,10 @@ h1 {
   font-size: 0.95em;
   font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s,
+    color 0.3s;
   border: 2px solid;
 }
 
@@ -191,7 +201,10 @@ h1 {
   border-radius: 8px;
   font-size: 0.95em;
   flex: 0 1 120px;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s,
+    color 0.3s;
   border: 2px solid;
 }
 
@@ -275,7 +288,11 @@ h1 {
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 1em;
-  transition: border-color 0.3s, background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
   border: 2px solid;
 }
 

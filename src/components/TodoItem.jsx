@@ -6,7 +6,9 @@ import './TodoItem.css'
  */
 const TodoItem = ({ todo, onToggle, onDelete, getCategoryColor }) => {
   return (
-    <li className={`todo-item ${todo.completed ? 'completed' : ''} priority-${todo.priority}`}>
+    <li
+      className={`todo-item ${todo.completed ? 'completed' : ''} priority-${todo.priority}`}
+    >
       <div className="todo-content">
         <input
           type="checkbox"
@@ -15,7 +17,10 @@ const TodoItem = ({ todo, onToggle, onDelete, getCategoryColor }) => {
           className="checkbox"
           aria-label={`${todo.completed ? 'Uncheck' : 'Check'} task: ${todo.text}`}
         />
-        <span className={`priority-badge priority-${todo.priority}`} aria-label={`Priority: ${todo.priority}`}>
+        <span
+          className={`priority-badge priority-${todo.priority}`}
+          aria-label={`Priority: ${todo.priority}`}
+        >
           {todo.priority.charAt(0).toUpperCase()}
         </span>
         <span
