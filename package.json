@@ -1,14 +1,22 @@
 {
   "name": "multi-agent-system",
   "version": "1.0.0",
-  "description": "A multi-agent system in Node.js",
-  "main": "src/index.js",
+  "description": "A React Todo App",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "node --watch src/index.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": ["agents", "multi-agent", "task-queue"],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": ["react", "todo", "vite"],
   "author": "Ajay Spak",
   "license": "MIT"
 }

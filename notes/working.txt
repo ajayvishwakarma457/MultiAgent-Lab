@@ -1,0 +1,5 @@
+Add:
+1. Local storage - save todos to browser storage so they persist on refresh
+2. Filter buttons - "All", "Active", "Completed"
+3. Clear all completed todos button
+4. Better styling with hover effects
